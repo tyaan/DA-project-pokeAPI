@@ -13,7 +13,7 @@ In addition to hitting our own APIs with JavaScript, we can also make use of API
     <summary>Tip</summary>
 
   ```sh
-  cd consuming-external-apis
+  cd consuming-clientside-apis
   npm i
   npm run dev
   ```
