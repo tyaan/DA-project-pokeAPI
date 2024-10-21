@@ -69,7 +69,7 @@ function PokemonList() {
       <div className="nav-buttons">
         <button onClick={() => prev10List()}>{'<<'}</button>
         <button onClick={() => prevList()}>{'<'}</button>
-        {listOffset / 20 + 1}
+        <span className="page-num">{listOffset / 20 + 1}</span>
         <button onClick={() => nextList()}>{'>'}</button>
         <button onClick={() => next10List()}>{'>>'}</button>
       </div>
