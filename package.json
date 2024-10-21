@@ -50,5 +50,8 @@
     "semi": false,
     "singleQuote": true
   },
-  "browserslist": "> 2%, not dead"
+  "browserslist": "> 2%, not dead",
+  "dependencies": {
+    "react-router-dom": "^6.27.0"
+  }
 }

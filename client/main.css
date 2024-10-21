@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(181, 213, 243);
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  /* color: red; */
+}
+
+.nav-list {
+  flex: 1;
+}
+
+.pokemon-display {
+  flex: 6;
+}
+
+h1 {
+  text-align: center;
+}
+
+.nav-buttons {
+  padding-left: 25px;
+}
+
+button {
+  margin: 3px;
+}
