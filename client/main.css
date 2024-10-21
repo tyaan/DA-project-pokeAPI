@@ -27,3 +27,11 @@ h1 {
 button {
   margin: 3px;
 }
+
+.sprite-image {
+  width: 250px;
+}
+
+.bold {
+  font-weight: bold;
+}

@@ -31,12 +31,30 @@ function PokemonList() {
 
   if (!collection) return <>Loading...</>
 
-  function nextPokemon() {
-    setListOffset(listOffset + LIST_LENGTH)
+  function nextList() {
+    setListOffset(
+      listOffset + LIST_LENGTH > collection.count
+        ? listOffset
+        : listOffset + LIST_LENGTH,
+    )
   }
 
-  function prevPokemon() {
+  function next10List() {
+    setListOffset(
+      listOffset + LIST_LENGTH * 10 > collection.count
+        ? collection.count - (collection.count % LIST_LENGTH)
+        : listOffset + LIST_LENGTH * 10,
+    )
+  }
+
+  function prevList() {
     setListOffset(listOffset == 0 ? 0 : listOffset - LIST_LENGTH)
+  }
+
+  function prev10List() {
+    setListOffset(
+      listOffset - LIST_LENGTH * 10 < 0 ? 0 : listOffset - LIST_LENGTH * 10,
+    )
   }
 
   return (
@@ -49,9 +67,11 @@ function PokemonList() {
         ))}
       </ul>
       <div className="nav-buttons">
-        <button onClick={() => prevPokemon()}>Prev</button>
+        <button onClick={() => prev10List()}>{'<<'}</button>
+        <button onClick={() => prevList()}>{'<'}</button>
         {listOffset / 20 + 1}
-        <button onClick={() => nextPokemon()}>Next</button>
+        <button onClick={() => nextList()}>{'>'}</button>
+        <button onClick={() => next10List()}>{'>>'}</button>
       </div>
     </div>
   )

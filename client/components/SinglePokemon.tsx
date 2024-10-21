@@ -30,13 +30,32 @@ function SinglePokemon() {
 
   return (
     <div>
+      <h2>{pokemon.name}</h2>
+      <img
+        className="sprite-image"
+        src={pokemon.sprites.front_default}
+        alt="No sprite found for this pokemon"
+      ></img>
       <ul>
-        <li>Name: {pokemon.name}</li>
         <li>
-          Abilities:
+          <span className="bold">Height:</span> {pokemon.height / 10} metres
+        </li>
+        <li>
+          <span className="bold">Weight:</span> {pokemon.weight / 10} Kg
+        </li>
+        <li>
+          <span className="bold">Abilities:</span>
           <ul>
             {pokemon.abilities.map((a) => (
-              <li key={a.slot}>{a.ability.name}</li>
+              <li key={a.ability.name}>{a.ability.name}</li>
+            ))}
+          </ul>
+        </li>
+        <li>
+          <span className="bold">Types:</span>
+          <ul>
+            {pokemon.types.map((t) => (
+              <li key={t.type.name}>{t.type.name}</li>
             ))}
           </ul>
         </li>
