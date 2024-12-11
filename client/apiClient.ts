@@ -17,26 +17,24 @@ import request from 'superagent'
 import { Pokemon } from '../models/pokemon'
 import { AllPokemon } from '../models/allPokemon'
 
-export async function getPokemonFromName(
-  name: string
-): Promise<Pokemon> {
-  const response = await request.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+export async function getPokemonFromName(name: string): Promise<Pokemon> {
+  const response = await request.get(
+    `https://pokeapi.co/api/v2/pokemon/${name}`,
+  )
 
   return response.body
 }
 
-export async function getPokemonFromURL(
-  url: string
-): Promise<Pokemon> {
+export async function getPokemonFromURL(url: string): Promise<Pokemon> {
   const response = await request.get(url)
 
   return response.body
 }
 
-export async function getAllPokemon(
-  offset: number
-): Promise<AllPokemon> {
-  const response = await request.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}`)
+export async function getAllPokemon(offset: number): Promise<AllPokemon> {
+  const response = await request.get(
+    `https://pokeapi.co/api/v2/pokemon?offset=${offset}`,
+  )
 
   return response.body
 }
